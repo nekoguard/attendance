@@ -48,6 +48,12 @@
 
 ---
 
+## ER図
+[ER図（PDF）はこちら](docs/er_diagram.pdf)
+
+![ER図](docs/er_diagram.png)
+---
+
 ## セットアップ手順
 
 1. リポジトリをクローン
