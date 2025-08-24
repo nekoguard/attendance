@@ -46,7 +46,11 @@ class User extends Authenticatable
         ];
     }
 
-    
+    // UserInfoを取得
+    public function userInfo()
+    {
+        return $this->hasOne(UserInfo::class);
+    }
 
     // 管理者判定
     public function isAdmin()
