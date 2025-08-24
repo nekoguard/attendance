@@ -10,7 +10,7 @@
 
 ## デモ環境
 
-- サーバーURL: `[デモサイトはこちら](http://os3-296-37806.vs.sakura.ne.jp/login)`
+- [デモサイトはこちら](http://os3-296-37806.vs.sakura.ne.jp/login)
 
 ### ログイン情報（デモ用）
 
