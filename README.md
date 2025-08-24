@@ -75,8 +75,11 @@
 
 ## デモ画像
 
-![ダッシュボード画面](docs/demo_dashboard.png)
-![管理者マスタ管理画面](docs/demo_admin_master.png)
+![ダッシュボード画面](docs/user_dashboard.png)
+![在籍一覧](docs/user_attendance-list.png)
+![タイムカード](docs/user_timecard.png)
+![マスタ管理画面1](docs/admin_master_1.png)
+![マスタ管理画面2](docs/admin_master_2.png)
 
 ---
 
