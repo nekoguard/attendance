@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 勤怠管理システム（Laravel 11／ポートフォリオ用）
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 概要
 
-## About Laravel
+このプロジェクトは、実務を想定した勤怠管理システムです。  
+部署・課・ユーザー・勤怠・在籍状態・勤務区分など、複数テーブルのリレーションを活かした本格的な業務ロジックを実装しています。  
+管理者・一般ユーザーの権限分岐やマスタ管理、勤怠集計・残業・有休管理など、現場で求められる機能を網羅しています。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## デモ環境
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- サーバーURL: `（ここにデモサーバーURLを記載）`
 
-## Learning Laravel
+### ログイン情報（デモ用）
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 管理者ユーザー  
+  - 社員番号: `9900001`  
+  - パスワード: `SkwD9TSF`
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- 一般ユーザー  
+  - 社員番号: `0101001`  
+  - パスワード: `01010010101001`（IDを2回繰り返したもの）
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 主な機能
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **ユーザー認証・権限管理**（管理者/一般ユーザー）
+- **勤怠打刻（出勤・退勤・外出・戻り）**
+- **勤怠集計（勤務日数・残業・有休残数）**
+- **部署・課・在籍状態・勤務区分などのマスタ管理（管理者専用画面）**
+- **在籍一覧・編集機能**
+- **管理者用ナビゲーション切替**
+- **Seederによるダミーデータ投入**
+- **レスポンシブ対応UI（Tailwind CSS）**
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 技術スタック
 
-## Contributing
+- Laravel 11
+- MySQL
+- Blade（テンプレート）
+- Tailwind CSS
+- Axios, Alpine.js
+- Docker（devcontainer対応）
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## セットアップ手順
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. リポジトリをクローン
+    ```sh
+    git clone <このリポジトリのURL>
+    cd <プロジェクトディレクトリ>
+    ```
 
-## Security Vulnerabilities
+2. `.env`ファイルを作成し、DB接続等を設定
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. 依存パッケージをインストール
+    ```sh
+    composer install
+    npm install
+    npm run build
+    ```
 
-## License
+4. マイグレーション・シーディング
+    ```sh
+    php artisan migrate:fresh --seed
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. サーバー起動
+    ```sh
+    php artisan serve
+    ```
+
+---
+
+## デモ画像
+
+![ダッシュボード画面](docs/demo_dashboard.png)
+![管理者マスタ管理画面](docs/demo_admin_master.png)
+
+---
+
+## 工夫・アピールポイント
+
+- **リレーションを活かした集計・判定・マスタ管理**
+- **Blade/Controller/Seeder/JSの役割分担と保守性**
+- **管理者/一般ユーザーの権限分岐・ナビゲーション切替**
+- **実務を意識したUI/UX・マスタ管理・ダミーデータ投入**
+- **セキュリティ（CSRF/XSS/SQLi対策、認証・認可）**
+
+---
+
+## ライセンス
+
+MIT
+
+---
+
+## 補足
+
+- `.env`やシークレット情報は含めていません。必要に応じてご自身で作成してください。
+- ご質問・ご要望はIssueまたはPRでお気
