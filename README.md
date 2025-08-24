@@ -10,9 +10,13 @@
 
 ## デモ環境
 
-- サーバーURL: `準備中`
+- サーバーURL: `[デモサイトはこちら](http://os3-296-37806.vs.sakura.ne.jp/login)`
 
 ### ログイン情報（デモ用）
+
+- Basic認証
+  - ID:applight
+  - パスワード:JsNaPWGw4fYf
 
 - 管理者ユーザー  
   - ID（社員番号）: `9900001`  
@@ -40,6 +44,7 @@
 ## 技術スタック
 
 - Laravel 11
+- Laravel Breeze
 - MySQL
 - Blade（テンプレート）
 - Tailwind CSS
@@ -72,7 +77,18 @@
     npm run build
     ```
 
-4. マイグレーション・シーディング
+    node.jsはこちらのバージョンを使用しています。
+    ```sh
+    curl -fsSL https://rpm.nodesource.com/setup_18.x | bash
+    sudo dnf install -y nodejs --allowerasing
+    ```
+
+4. APP KEYを生成
+    ```sh
+    php artisan key:generate
+    ```
+
+5. マイグレーション・シーディング
     ```sh
     php artisan migrate:fresh --seed
     ```
