@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* tailwindcss ユーティリティー */
+@layer utilities {
+
+
+    .btn-parts{
+        @apply w-28 h-16 flex flex-col items-center justify-center rounded-lg text-white text-lg font-semibold shadow transition
+    }
+
+    .border-table{
+        @apply border border-gray-300 box-border border-solid
+    }
+}
