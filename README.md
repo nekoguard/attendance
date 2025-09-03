@@ -10,7 +10,7 @@
 
 ## デモ環境
 
-- [デモサイトはこちら](http://os3-296-37806.vs.sakura.ne.jp/attendance/login)（2025/09/03 メンテナンス中です。）
+- [デモサイトはこちら](https://os3-296-37806.vs.sakura.ne.jp/login)
 
 ### ログイン情報（デモ用）
 
